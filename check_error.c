@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 12:00:27 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/10 18:41:22 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/11 16:32:08 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_check_syntax(char *str)
 
 	i = 0;
 	if (!str[0])
-			return (1);
+		return (1);
 	if (str[i] == '-')
 		i++;
 	while (str[i])
@@ -56,6 +56,7 @@ int	ft_check_syntax(char *str)
 	}
 	return (0);
 }
+
 int	ft_check_repetition(char **av, int nbr)
 {
 	int	i;

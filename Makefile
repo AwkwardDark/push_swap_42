@@ -6,7 +6,7 @@
 #    By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 17:37:18 by pajimene          #+#    #+#              #
-#    Updated: 2024/06/10 19:11:37 by pajimene         ###   ########.fr        #
+#    Updated: 2024/06/11 16:29:46 by pajimene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,16 @@ CFLAGS = -Wall -Werror -Wextra -g3
 SRC =	main.c \
 		check_error.c \
 		parse_stack.c \
-		operations.c
+		rotate.c \
+		rev_rotate.c \
+		push.c \
+		swap.c \
+		sorting.c
 
 UTILS_SRC = ft_split.c \
-			linked_list_utils.c \
-			string_utils.c
+			linked_list_utils_1.c \
+			linked_list_utils_2.c \
+			free_memory.c
 
 OBJ = $(SRC:.c=.o)
 UTILS_OBJ = $(UTILS_SRC:.c=.o)

@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_memory.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 11:39:43 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/11 16:31:20 by pajimene         ###   ########.fr       */
+/*   Created: 2024/06/11 16:29:13 by pajimene          #+#    #+#             */
+/*   Updated: 2024/06/11 16:34:08 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_free(char **av)
 {
-	t_node	*a;
-	t_node	*b;
+	int	i;
 
-	a = NULL;
-	b = NULL;
-	if (ac == 1)
-		return (1);
-	if (ft_check_error(ac, av))
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
-	ft_parse_stack(ac, av, &a);
-	ft_push_swap(&a, &b);
-	return (0);
+	if (!av || !*av)
+		return ;
+	i = 0;
+	while (av[i])
+		free(av[i++]);
+	free(av);
 }
