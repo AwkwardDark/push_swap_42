@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:26:48 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/11 16:32:51 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:11:22 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 t_node	*ft_lstnew(int nbr)
 {
 	t_node		*lstnew;
-	static int	i;
 
 	lstnew = malloc(sizeof(t_node));
 	if (!lstnew)
 		return (NULL);
 	lstnew->value = nbr;
-	lstnew->position = i++;
 	lstnew->next = NULL;
 	lstnew->prev = NULL;
 	return (lstnew);
@@ -55,7 +53,7 @@ void	ft_lstadd_back(t_node **lst, t_node *new)
 	new->prev = last;
 }
 
-int	ft_lst_sort(t_node **lst)
+int	ft_is_sort(t_node **lst)
 {
 	t_node	*current;
 
@@ -71,20 +69,20 @@ int	ft_lst_sort(t_node **lst)
 	return (1);
 }
 
-void	ft_lstclear(t_node **lst)
-{
-	t_node	*current;
-	t_node	*next;
+// void	ft_lstclear(t_node **lst)
+// {
+// 	t_node	*current;
+// 	t_node	*next;
 
-	if (lst)
-	{
-		current = *lst;
-		while (current)
-		{
-			next = current->next;
-			free(current);
-			current = next;
-		}
-		*lst = NULL;
-	}
-}
+// 	if (lst)
+// 	{
+// 		current = *lst;
+// 		while (current)
+// 		{
+// 			next = current->next;
+// 			free(current);
+// 			current = next;
+// 		}
+// 		*lst = NULL;
+// 	}
+// }

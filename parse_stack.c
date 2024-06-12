@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 14:50:03 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/11 16:32:31 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:24:46 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_parse_stack(int ac, char **av, t_node **a)
 		i++;
 	}
 	if (ac == 2)
-		ft_free(av);
+		ft_free_split(av);
 	return ;
 }
 

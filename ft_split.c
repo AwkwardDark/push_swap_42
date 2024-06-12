@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 13:48:37 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/10 18:39:13 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:25:17 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	ft_wordlen(char const *s, char c, int i)
 	return (count);
 }
 
-static void	ft_free_split(char **tab, int *k)
+static void	ft_free_tab(char **tab, int *k)
 {
 	int	i;
 
@@ -97,7 +97,7 @@ char	**ft_split(char const *s, char c)
 		if (s[i])
 		{
 			tab[k] = ft_print_word(s, c, i);
-			ft_free_split(tab, &k);
+			ft_free_tab(tab, &k);
 		}
 		while (s[i] && s[i] != c)
 			i++;

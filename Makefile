@@ -6,7 +6,7 @@
 #    By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 17:37:18 by pajimene          #+#    #+#              #
-#    Updated: 2024/06/11 16:29:46 by pajimene         ###   ########.fr        #
+#    Updated: 2024/06/12 19:32:36 by pajimene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC =	main.c \
 UTILS_SRC = ft_split.c \
 			linked_list_utils_1.c \
 			linked_list_utils_2.c \
+			sorting_utils.c \
 			free_memory.c
 
 OBJ = $(SRC:.c=.o)

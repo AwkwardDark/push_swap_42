@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:25:06 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/11 16:34:00 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:16:48 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ void	ft_push(t_node **src, t_node **dest)
 	if (!*src)
 		return ;
 	push = *src;
-	if ((*src)->next)
-	{
-		*src = (*src)->next;
-		(*src)->next->prev = NULL;
-	}
+	*src = (*src)->next;
+	if (*src)
+		(*src)->prev = NULL;
+	push->prev = NULL;
 	if (!*dest)
 	{
 		*dest = push;
@@ -37,12 +36,14 @@ void	ft_push(t_node **src, t_node **dest)
 	}	
 }
 
-void	pa(t_node **b, t_node **a)
+void	pa(t_node **a, t_node **b)
 {
 	ft_push(b, a);
+	write(1, "pa\n", 3);
 }
 
-void	pb(t_node **b, t_node **a)
+void	pb(t_node **a, t_node **b)
 {
 	ft_push(a, b);
+	write(1, "pb\n", 3);
 }

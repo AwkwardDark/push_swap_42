@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 12:00:27 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/11 16:32:08 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/12 21:10:34 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,14 @@ int	ft_check_error(int ac, char **av)
 		if (ft_check_syntax(av[i]))
 			return (1);
 		nbr = atol(av[i]);
-		if (nbr > 2147483647 || nbr < -2147483648)
+		if (nbr > INT_MAX || nbr < INT_MIN)
 			return (1);
 		if (ft_check_repetition(av + i + 1, (int)nbr))
 			return (1);
 		i++;
 	}
+	if (ac == 2)
+		ft_free_split(av);
 	return (0);
 }
 
