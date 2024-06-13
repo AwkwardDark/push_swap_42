@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:55:52 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/12 21:21:17 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/13 19:35:32 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,20 @@ t_node	*ft_find_min(t_node *lst)
 		current = current->next;
 	}
 	return (min);
+}
+
+int	ft_is_sort(t_node **lst)
+{
+	t_node	*current;
+
+	current = *lst;
+	if (!current->next)
+		return (1);
+	while (current->next)
+	{
+		if (current->value > current->next->value)
+			return (0);
+		current = current->next;
+	}
+	return (1);
 }

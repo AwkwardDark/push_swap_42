@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:26:48 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/12 19:11:22 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/13 19:35:35 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,37 +52,3 @@ void	ft_lstadd_back(t_node **lst, t_node *new)
 	last->next = new;
 	new->prev = last;
 }
-
-int	ft_is_sort(t_node **lst)
-{
-	t_node	*current;
-
-	current = *lst;
-	if (!current->next)
-		return (1);
-	while (current->next)
-	{
-		if (current->value > current->next->value)
-			return (0);
-		current = current->next;
-	}
-	return (1);
-}
-
-// void	ft_lstclear(t_node **lst)
-// {
-// 	t_node	*current;
-// 	t_node	*next;
-
-// 	if (lst)
-// 	{
-// 		current = *lst;
-// 		while (current)
-// 		{
-// 			next = current->next;
-// 			free(current);
-// 			current = next;
-// 		}
-// 		*lst = NULL;
-// 	}
-// }
