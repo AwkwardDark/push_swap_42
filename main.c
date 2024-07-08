@@ -29,18 +29,7 @@ int	main(int ac, char **av)
 	}
 	ft_parse_stack(ac, av, &a);
 	curr = a;
-	// while (curr)
-	// {
-	// 	printf("value -> %d\n", curr->value);
-	// 	curr = curr->next;
-	// }
 	ft_push_swap(&a, &b);
-	// curr = a;
-	// while (curr)
-	// {
-	// 	printf("value -> %d\n", curr->value);
-	// 	curr = curr->next;
-	// }
 	ft_free_lst(&a);
 	return (0);
 }
