@@ -69,7 +69,6 @@ static void	ft_sort_big(t_node **a, t_node **b)
 
 void	ft_push_swap(t_node **a, t_node **b)
 {
-	(void)b;
 	if (!*a || ft_is_sort(a))
 		return ;
 	else if (ft_lstlen(*a) == 2)
