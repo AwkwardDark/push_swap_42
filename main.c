@@ -16,7 +16,6 @@ int	main(int ac, char **av)
 {
 	t_node	*a;
 	t_node	*b;
-	t_node *curr;
 
 	a = NULL;
 	b = NULL;
@@ -28,7 +27,6 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	ft_parse_stack(ac, av, &a);
-	curr = a;
 	ft_push_swap(&a, &b);
 	ft_free_lst(&a);
 	return (0);
