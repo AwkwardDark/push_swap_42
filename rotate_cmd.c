@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:24:39 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/13 19:26:31 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/14 13:05:44 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,10 @@ void	rb(t_node **b, int flag)
 		write(1, "rb\n", 3);
 }
 
-void	rr(t_node **a, t_node **b)
+void	rr(t_node **a, t_node **b, int flag)
 {
 	ra(a, 1);
 	rb(b, 1);
-	write(1, "rr\n", 3);
+	if (!flag)
+		write(1, "rr\n", 3);
 }

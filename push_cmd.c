@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:25:06 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/13 19:25:42 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/14 12:56:39 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,16 @@ static void	ft_push(t_node **src, t_node **dest)
 	}	
 }
 
-void	pa(t_node **a, t_node **b)
+void	pa(t_node **a, t_node **b, int flag)
 {
 	ft_push(b, a);
-	write(1, "pa\n", 3);
+	if (!flag)
+		write(1, "pa\n", 3);
 }
 
-void	pb(t_node **a, t_node **b)
+void	pb(t_node **a, t_node **b, int flag)
 {
 	ft_push(a, b);
-	write(1, "pb\n", 3);
+	if (!flag)
+		write(1, "pb\n", 3);
 }

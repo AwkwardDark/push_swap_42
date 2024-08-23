@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:25:16 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/13 19:26:04 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/14 12:58:17 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@ void	sb(t_node **b, int flag)
 		write(1, "sb\n", 3);
 }
 
-void	ss(t_node **a, t_node **b)
+void	ss(t_node **a, t_node **b, int flag)
 {
 	sa(a, 1);
 	sb(b, 1);
-	write(1, "ss\n", 3);
+	if (!flag)
+		write(1, "ss\n", 3);
 }

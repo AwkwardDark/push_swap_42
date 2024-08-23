@@ -6,49 +6,64 @@
 #    By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/10 17:37:18 by pajimene          #+#    #+#              #
-#    Updated: 2024/06/13 19:30:50 by pajimene         ###   ########.fr        #
+#    Updated: 2024/06/14 13:30:38 by pajimene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
-
-CFLAGS = -Wall -Werror -Wextra -g3
-
-SRC =	main.c \
-		parsing.c \
-		rotate_cmd.c \
-		rev_rotate_cmd.c \
-		push_cmd.c \
-		swap_cmd.c \
-		push_swap_algorithm.c \
-		rotate_push_nodes.c
+SRC 	=	main.c \
+			push_swap_algorithm.c \
+			rotate_push_nodes.c
 
 UTILS_SRC = ft_split.c \
-			linked_list_utils_1.c \
-			linked_list_utils_2.c \
-			sorting_utils.c \
+			parsing.c \
+			linked_list_utils.c \
+			sorting_utils_1.c \
+			sorting_utils_2.c \
+			sorting_utils_3.c \
+			rotate_cmd.c \
+			rev_rotate_cmd.c \
+			push_cmd.c \
+			swap_cmd.c \
 			check_error.c \
 			free_memory.c
 
-OBJ = $(SRC:.c=.o)
+SRC_B 	= 	main_bonus.c \
+			checker.c \
+			get_next_line.c \
+			get_next_line_utils.c
+
+OBJ 	= 	$(SRC:.c=.o)
+
 UTILS_OBJ = $(UTILS_SRC:.c=.o)
 
-HEADER = push_swap.h
+OBJ_B	=	$(SRC_B:.c=.o)
 
-NAME = push_swap
+NAME 	=	push_swap
 
-all: $(NAME) clean
+NAME_B 	= 	checker
 
-$(NAME): $(OBJ) $(UTILS_OBJ)
+CC 		= 	cc
+
+CFLAGS 	= 	-Wall -Werror -Wextra -g3
+
+all: 		$(NAME)
+
+bonus: 		$(NAME_B)
+
+$(NAME): 	$(OBJ) $(UTILS_OBJ)
 	$(CC) $(CFLAGS) -c $(SRC)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(UTILS_OBJ)
 
+$(NAME_B):  $(OBJ_B) $(UTILS_OBJ)
+	$(CC) $(CFLAGS) -c $(SRC_B)
+	$(CC) $(CFLAGS) -o $(NAME_B) $(UTILS_OBJ) $(OBJ_B)
+
 clean:
-	rm -f $(OBJ) $(UTILS_OBJ)
+	rm -f $(OBJ) $(UTILS_OBJ) $(OBJ_B)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(NAME_B)
 
-re: fclean all
+re: fclean all bonus
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

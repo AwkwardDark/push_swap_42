@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_algorithm.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 13:49:52 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/13 19:19:25 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/14 13:06:00 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,14 @@ static void	ft_sort_big(t_node **a, t_node **b)
 
 	len_a = ft_lstlen(*a);
 	if (len_a-- > 3 && !ft_is_sort(a))
-		pb(a, b);
+		pb(a, b, 0);
 	if (len_a-- > 3 && !ft_is_sort(a))
-		pb(a, b);
+		pb(a, b, 0);
 	while (len_a-- > 3 && !ft_is_sort(a))
 	{
 		ft_refresh_stack_a(*a, *b);
 		ft_push_a_to_b(a, b);
 	}
-	ft_refresh_stack_a(*a, *b);
 	ft_sort_three(a);
 	while (*b)
 	{
@@ -69,6 +68,7 @@ static void	ft_sort_big(t_node **a, t_node **b)
 
 void	ft_push_swap(t_node **a, t_node **b)
 {
+	(void)b;
 	if (!*a || ft_is_sort(a))
 		return ;
 	else if (ft_lstlen(*a) == 2)

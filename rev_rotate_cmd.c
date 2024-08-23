@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:24:56 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/13 19:26:13 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/14 13:05:31 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,13 @@ void	rrb(t_node **b, int flag)
 {
 	ft_rev_rotate(b);
 	if (!flag)
-		write(1, "rra\n", 4);
+		write(1, "rrb\n", 4);
 }
 
-void	rrr(t_node **a, t_node **b)
+void	rrr(t_node **a, t_node **b, int flag)
 {
 	rra(a, 1);
 	rrb(b, 1);
-	write(1, "rrr\n", 4);
+	if (!flag)
+		write(1, "rrr\n", 4);
 }

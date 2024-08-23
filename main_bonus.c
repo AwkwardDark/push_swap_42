@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 11:39:43 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/14 12:31:19 by pajimene         ###   ########.fr       */
+/*   Created: 2024/06/14 12:33:56 by pajimene          #+#    #+#             */
+/*   Updated: 2024/06/14 14:00:42 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(int ac, char **av)
 {
 	t_node	*a;
 	t_node	*b;
+	char	*line;
 
 	a = NULL;
 	b = NULL;
@@ -27,8 +28,14 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	ft_parse_stack(ac, av, &a);
-	ft_push_swap(&a, &b);
-	ft_free_lst(&a);
-	ft_free_lst(&b);
+	line = get_next_line(0, 0);
+	while (line)
+	{
+		ft_checker(&a, &b, line);
+		free(line);
+		line = get_next_line(0, 0);
+	}
+	free(line);
+	ft_verify_free(&a, &b);
 	return (0);
 }

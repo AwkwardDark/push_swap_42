@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 12:39:37 by pajimene          #+#    #+#             */
-/*   Updated: 2024/06/13 19:31:31 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/06/14 13:06:39 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	ft_rotate_both(t_node **a, t_node **b, t_node *cheapest)
 {
 	while (*a != cheapest && *b != cheapest->target)
-		rr(a, b);
+		rr(a, b, 0);
 	ft_set_index(*a);
 	ft_set_index(*b);
 }
@@ -23,7 +23,7 @@ static void	ft_rotate_both(t_node **a, t_node **b, t_node *cheapest)
 static void	ft_rev_rotate_both(t_node **a, t_node **b, t_node *cheapest)
 {
 	while (*a != cheapest && *b != cheapest->target)
-		rrr(a, b);
+		rrr(a, b, 0);
 	ft_set_index(*a);
 	ft_set_index(*b);
 }
@@ -60,11 +60,11 @@ void	ft_push_a_to_b(t_node **a, t_node **b)
 		ft_rev_rotate_both(a, b, cheapest);
 	ft_finish_rotation(a, cheapest, 'a');
 	ft_finish_rotation(b, cheapest->target, 'b');
-	pb(a, b);
+	pb(a, b, 0);
 }
 
 void	ft_push_b_to_a(t_node **a, t_node **b)
 {
 	ft_finish_rotation(a, (*b)->target, 'a');
-	pa(a, b);
+	pa(a, b, 0);
 }
